@@ -1,0 +1,8 @@
+<h2>Enter Band Information</h2>
+
+<form action="<%= bands_url %>" method="POST">
+  <%= render_auth_token %>
+  <label for="band_name">Enter Band Name</label>
+    <input id="band_name" type="text" name="band[name]">
+  <button>Submit</button>
+</form>

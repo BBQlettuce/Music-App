@@ -1,0 +1,9 @@
+<h2>Enter Band Information</h2>
+
+<form action="<%= band_url(@band) %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <%= render_auth_token %>
+  <label for="band_name">Enter Band Name</label>
+    <input id="band_name" type="text" name="band[name]" value="<%= @band.name %>">
+  <button>Submit</button>
+</form>

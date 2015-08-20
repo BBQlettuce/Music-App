@@ -21,8 +21,8 @@ class BandsController < ApplicationController
   end
 
   def create
-    band = Band.new(band_params)
-    if band.save
+    @band = Band.new(band_params)
+    if @band.save
       render :show
     else
       redirect_to new_band_url
@@ -30,9 +30,17 @@ class BandsController < ApplicationController
   end
 
   def edit
+    @band = Band.find(params[:id])
+    render :edit
   end
 
   def update
+    @band = Band.find(params[:id])
+    if @band.update(band_params)
+      render :show
+    else
+      redirect_to edit_band_url(@band)
+    end
   end
 
   def destroy
