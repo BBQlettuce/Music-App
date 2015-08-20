@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to new_session_url
     else
       login_user!(user)
-      redirect_to user_url(user)
+      redirect_to bands_url
     end
   end
 
