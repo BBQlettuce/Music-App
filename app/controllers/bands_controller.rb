@@ -1,10 +1,6 @@
 class BandsController < ApplicationController
   before_action :check_if_logged_in
 
-  def check_if_logged_in
-    redirect_to new_session_url if !logged_in?
-  end
-
   def index
     @bands = Band.all
     render :index
