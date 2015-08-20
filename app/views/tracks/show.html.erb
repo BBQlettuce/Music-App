@@ -2,8 +2,20 @@
 
 <h3>By: <%= @album.band.name %></h3>
 <h3>Album: <%= @album.name %></h3>
-<p>Track type: <%= @track.track_type %> <p>
-<p>Lyrics: <%= @track.lyrics %> <p>
+<h3>Track type: <%= @track.track_type %> </h3>
+<h3>Lyrics:</h3>
+<p> <%= @track.lyrics %> </p>
+
+<h4>Comments:</h4>
+  <ul>
+    <% notes = @track.notes.includes(:user) %>
+    <% notes.each do |note| %>
+      <li><%= note.user.email %>: <%= note.text %></li>
+    <% end %>
+  </ul>
+<br>
+
+
 
 <br>
 <a href="<%= edit_track_url(@track) %>">Edit Track Information</a>
