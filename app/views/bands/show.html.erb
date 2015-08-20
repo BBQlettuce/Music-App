@@ -10,6 +10,16 @@
 
 <br>
 <a href="<%= edit_band_url(@band) %>">Edit Band Information</a>
+<br>
 
 <br>
 <a href="<%= bands_url %>">Back to All Bands</a>
+<br>
+
+<br>
+<form action="<%= band_url(@band) %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <%= render_auth_token %>
+  <button>Delete this band!</button>
+</form>
+<br>
