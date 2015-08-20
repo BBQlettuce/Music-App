@@ -1,5 +1,7 @@
 <h2>New User Signup</h2>
 
+<%= render_errors(@user) %>
+
 <form action="<%= users_url %>" method="POST">
   <%= render "shared/email_password_form" %>
 </form>

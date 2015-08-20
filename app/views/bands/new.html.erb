@@ -1,5 +1,7 @@
 <h2>Enter Band Information</h2>
 
+<%= render_errors(@band) %>
+
 <form action="<%= bands_url %>" method="POST">
   <%= render_auth_token %>
   <%= render 'band_attr_form' %>
