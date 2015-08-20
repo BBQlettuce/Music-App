@@ -10,7 +10,8 @@
   <ul>
     <% notes = @track.notes.includes(:user) %>
     <% notes.each do |note| %>
-      <li><%= note.user.email %>: <%= note.text %></li>
+      <% @note = note %>
+      <%= render 'notes/note' %>
     <% end %>
   </ul>
 <br>

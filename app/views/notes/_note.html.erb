@@ -1,0 +1,12 @@
+<li>
+  <%= @note.text %>
+  <br>
+  by <%= @note.user.email %>
+  <% if @note.user == current_user %>
+    <form action="<%= note_url(@note) %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <%= render_auth_token %>
+      <button>Delete Comment</button>
+    </form>
+  <% end %>
+</li>
