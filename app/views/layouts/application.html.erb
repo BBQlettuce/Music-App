@@ -9,7 +9,7 @@
 <body>
   <% if logged_in? %>
   <form action="<%= session_url %>" method="POST">
-    <input type="hidden" name="_method" method="DELETE">
+    <input type="hidden" name="_method" value="DELETE">
     <%= render_auth_token %>
     <button>Logout</button>
   </form>
