@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @band = @album.band
     render :show
   end
 
@@ -30,6 +31,7 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     if @album.update(album_params)
+      @band = @album.band
       render :show
     else
       redirect_to edit_album_url(@album)
@@ -39,7 +41,7 @@ class AlbumsController < ApplicationController
   def destroy
     album = Album.find(params[:id])
     album.destroy
-    redirect_to albums_url
+    redirect_to band_url(album.band)
   end
 
   private

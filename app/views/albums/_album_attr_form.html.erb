@@ -1,0 +1,34 @@
+<%= render_auth_token %>
+<label for="band_name">Band Name</label>
+  <select id="band_name" name="album[band_id]">
+    <% bands = Band.all %>
+    <% bands.each do |band| %>
+      <option
+        value="<%= band.id %>"
+        <%= "selected" if band.id == @band.id %>
+        ><%= band.name %>
+      </option>
+    <% end %>
+  </select>
+<br>
+
+<br>
+<label for="album_name">Album Name</label>
+  <input id="album_name" type="text" name="album[name]" value="<%= @album.name %>">
+<br>
+
+<br>
+<label for="record_type">Album Type</label>
+  <input id="record_type"
+    type="radio"
+    name="album[record_type]"
+    value="studio"
+    <%= "checked" if @album.record_type == "studio" %> >Studio
+  <input id="record_type"
+    type="radio"
+    name="album[record_type]"
+    value="studio"
+    <%= "checked" if @album.record_type == "live" %> >Live
+<br>
+
+<button>Submit</button>
