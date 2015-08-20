@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   end
 
   resources :tracks, only: [:create, :show, :edit, :update, :destroy] do
-    resources :notes, only: :new
+    resources :notes, only: :create
   end
 
-  resources :notes, only: [:create, :edit, :update, :destroy]
+  resources :notes, only: [:edit, :update, :destroy]
 
   root to: "bands#index"
 end

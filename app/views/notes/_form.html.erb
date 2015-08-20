@@ -1,4 +1,6 @@
-<form action="notes_url" method="POST">
+<form action="<%= track_notes_url(@track) %>" method="POST">
+  <%= render_auth_token %>
   <label for="note">Leave a comment!</label>
     <textarea id="note" name="note[text]"></textarea>
+    <button>Submit</button>
 </form>
