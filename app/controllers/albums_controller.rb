@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
 
   def create
     @band = Band.find(album_params[:band_id])
-    @album = @band.albums.create(album_params)
+    @album = Album.create(album_params)
     if @album.save
       render :show
     else

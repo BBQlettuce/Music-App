@@ -15,7 +15,7 @@ class TracksController < ApplicationController
 
   def create
     @album = Album.find(track_params[:album_id])
-    @track = @album.tracks.create(track_params)
+    @track = Track.create(track_params)
     if @track.save
       render :show
     else

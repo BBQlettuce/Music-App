@@ -1,0 +1,8 @@
+<h2>Edit <%= @track.name %></h2>
+
+<% @album = @track.album %>
+
+<form action="<%= track_url(@track) %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <%= render 'track_attr_form' %>
+</form>
