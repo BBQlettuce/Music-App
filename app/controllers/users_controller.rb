@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # log the user in
+      login_user!(@user)
       render :show
     else
       # flash.now[:errors] = @user.errors.full_messages
