@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
 
+  has_many :notes,
+    class_name: "Note",
+    foreign_key: :user_id,
+    primary_key: :id
 end
